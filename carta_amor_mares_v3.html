@@ -1,0 +1,122 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Fuzzy+Bubbles:wght@400;700&family=Raleway:wght@300;400&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#08030f;color:#ddd0f0;font-family:'Raleway',sans-serif;min-height:100vh;overflow-x:hidden;}
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.particle{position:absolute;width:3px;height:3px;border-radius:50%;opacity:0;animation:floatUp linear infinite;}
+@keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0;}10%{opacity:0.5;}90%{opacity:0.15;}100%{transform:translateY(-10vh) scale(1.5);opacity:0;}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:0.3;transform:scale(1);}50%{opacity:1;transform:scale(1.25);}}
+
+.wrapper{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+
+.hearts{text-align:center;margin-bottom:1rem;opacity:0;animation:fadeIn 1s ease 0.1s forwards;}
+.hearts span{font-size:15px;margin:0 5px;display:inline-block;animation:pulse 2.2s ease-in-out infinite;}
+.hearts span:nth-child(2){animation-delay:0.4s;}
+.hearts span:nth-child(3){animation-delay:0.8s;}
+
+.spotify-section{margin-bottom:2.5rem;opacity:0;animation:fadeIn 1s ease 0.3s forwards;}
+.spotify-label{font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#6b3fa0;margin-bottom:10px;text-align:center;}
+.spotify-section iframe{border-radius:12px;width:100%;height:152px;border:none;}
+
+.header{text-align:center;margin-bottom:3rem;opacity:0;animation:fadeIn 1.2s ease 0.6s forwards;}
+.para-voce{font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#6b3fa0;margin-bottom:0.8rem;}
+.nome-destino{font-family:'Coiny',cursive;font-size:clamp(4rem,12vw,6.5rem);color:#c9b0e8;line-height:1;letter-spacing:2px;}
+.divider{display:flex;align-items:center;gap:12px;justify-content:center;margin:1.2rem 0;}
+.divider-line{flex:1;max-width:70px;height:0.5px;background:#2e1050;}
+.divider-sym{color:#6b3fa0;font-family:'Coiny',cursive;font-size:20px;letter-spacing:2px;}
+
+.btn-envelope{display:block;width:100%;padding:1rem 1.5rem;background:transparent;border:0.5px solid #2e1050;border-radius:12px;color:#9b6cc8;font-family:'Coiny',cursive;font-size:1.3rem;letter-spacing:2px;cursor:pointer;text-align:center;margin-bottom:2rem;transition:all 0.3s ease;opacity:0;animation:fadeIn 1s ease 0.8s forwards;}
+.btn-envelope:hover{background:#0f0520;border-color:#6b3fa0;color:#c9b0e8;}
+
+.carta{display:none;background:#0c0418;border:0.5px solid #2e1050;border-radius:16px;padding:2.5rem 2rem;margin-bottom:2.5rem;position:relative;overflow:hidden;}
+.carta::before{content:'"';position:absolute;top:-15px;left:15px;font-family:'Fuzzy Bubbles',cursive;font-size:140px;color:#150830;line-height:1;pointer-events:none;}
+.carta.aberta{display:block;opacity:0;animation:fadeIn 1.2s ease forwards;}
+
+.carta p{font-family:'Fuzzy Bubbles',cursive;font-size:clamp(0.95rem,2.3vw,1.08rem);line-height:2.1;color:#cdbfe0;margin-bottom:1.5rem;position:relative;z-index:1;font-weight:400;}
+.carta p:last-of-type{margin-bottom:0;}
+.carta .destaque{color:#a07ad4;font-weight:700;}
+
+.assinatura{text-align:right;margin-top:2rem;padding-top:1.5rem;border-top:0.5px solid #1a0835;}
+.assinatura .com-amor{font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#6b3fa0;display:block;margin-bottom:6px;}
+.assinatura .nome-remetente{font-family:'Coiny',cursive;font-size:2.2rem;color:#c9b0e8;letter-spacing:2px;}
+
+.footer{text-align:center;opacity:0;animation:fadeIn 1s ease 1.6s forwards;}
+.footer .ico{font-size:1.5rem;margin-bottom:8px;display:block;}
+.footer p{font-family:'Raleway',sans-serif;font-size:12px;color:#3a1760;letter-spacing:2px;text-transform:uppercase;}
+</style>
+
+<div id="particles"></div>
+<div class="wrapper">
+
+  <div class="hearts">
+    <span>🍷</span><span>✦</span><span>🍷</span>
+  </div>
+
+  <div class="spotify-section">
+    <p class="spotify-label">nossa playlist</p>
+    <iframe src="https://open.spotify.com/embed/playlist/51qGutR03Z76rWN4RwC5r8?utm_source=generator&theme=0"
+      allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
+  <div class="header">
+    <p class="para-voce">para você</p>
+    <h1 class="nome-destino">Mares</h1>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-sym">✦</span>
+      <div class="divider-line"></div>
+    </div>
+  </div>
+
+  <button class="btn-envelope" id="btnAbrir" onclick="abrirCarta()">
+    ✦ toque para abrir sua carta ✦
+  </button>
+
+  <div class="carta" id="carta">
+    <p>
+      <span class="destaque">Mares</span>, tem coisas que a gente não sabe explicar direito — como certas tardes se tornam inesquecíveis só porque você estava lá.
+    </p>
+    <p>
+      Lembro de cada <span class="destaque">tarde do vinho</span>, do jeito que o tempo parava enquanto a gente conversava sobre tudo e sobre nada. Não era o vinho que tornava aquelas horas especiais — era você, do outro lado, com sua forma de me ouvir e de falar que sempre soou como lar.
+    </p>
+    <p>
+      Já faz um tempo que você é parte do que eu chamo de vida boa. E nesse dia dos namorados, quero que você saiba que cada detalhe seu importa pra mim — os sérios e os engraçados, os que você nem percebe que tem.
+    </p>
+    <p>
+      Feliz dia dos namorados, meu amor. Que a gente tenha ainda muitas e muitas <span class="destaque">tardes como aquelas</span> — e todas as outras que ainda não inventamos.
+    </p>
+    <div class="assinatura">
+      <span class="com-amor">com amor,</span>
+      <span class="nome-remetente">Luiz</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="ico">🍷</span>
+    <p>12 de junho · dia dos namorados</p>
+  </div>
+
+</div>
+
+<script>
+const container = document.getElementById('particles');
+for(let i=0;i<35;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  p.style.left=Math.random()*100+'%';
+  const s=(Math.random()*4+2)+'px';
+  p.style.width=p.style.height=s;
+  p.style.animationDuration=(Math.random()*18+10)+'s';
+  p.style.animationDelay=(Math.random()*12)+'s';
+  const cols=['#3a1760','#2e1050','#6b3fa0','#1a0835','#4a2080'];
+  p.style.background=cols[Math.floor(Math.random()*cols.length)];
+  container.appendChild(p);
+}
+function abrirCarta(){
+  document.getElementById('btnAbrir').style.display='none';
+  const c=document.getElementById('carta');
+  c.classList.add('aberta');
+}
+</script>
