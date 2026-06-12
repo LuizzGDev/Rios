@@ -9,7 +9,7 @@ body{background:#08030f;color:#ddd0f0;font-family:'Raleway',sans-serif;min-heigh
 @keyframes fadeIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{opacity:0.3;transform:scale(1);}50%{opacity:1;transform:scale(1.25);}}
 
-.wrapper{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+.wrapper{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:2rem 1.2rem 4rem;}
 
 .hearts{text-align:center;margin-bottom:1rem;opacity:0;animation:fadeIn 1s ease 0.1s forwards;}
 .hearts span{font-size:15px;margin:0 5px;display:inline-block;animation:pulse 2.2s ease-in-out infinite;}
@@ -20,31 +20,45 @@ body{background:#08030f;color:#ddd0f0;font-family:'Raleway',sans-serif;min-heigh
 .spotify-label{font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#6b3fa0;margin-bottom:10px;text-align:center;}
 .spotify-section iframe{border-radius:12px;width:100%;height:152px;border:none;}
 
-.header{text-align:center;margin-bottom:3rem;opacity:0;animation:fadeIn 1.2s ease 0.6s forwards;}
+.header{text-align:center;margin-bottom:2rem;opacity:0;animation:fadeIn 1.2s ease 0.6s forwards;}
 .para-voce{font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#6b3fa0;margin-bottom:0.8rem;}
-.nome-destino{font-family:'Coiny',cursive;font-size:clamp(4rem,12vw,6.5rem);color:#c9b0e8;line-height:1;letter-spacing:2px;}
+.nome-destino{font-family:'Coiny',cursive;font-size:clamp(3.5rem, 14vw, 6.5rem);color:#c9b0e8;line-height:1;letter-spacing:2px;}
 .divider{display:flex;align-items:center;gap:12px;justify-content:center;margin:1.2rem 0;}
 .divider-line{flex:1;max-width:70px;height:0.5px;background:#2e1050;}
 .divider-sym{color:#6b3fa0;font-family:'Coiny',cursive;font-size:20px;letter-spacing:2px;}
 
-.btn-envelope{display:block;width:100%;padding:1rem 1.5rem;background:transparent;border:0.5px solid #2e1050;border-radius:12px;color:#9b6cc8;font-family:'Coiny',cursive;font-size:1.3rem;letter-spacing:2px;cursor:pointer;text-align:center;margin-bottom:2rem;transition:all 0.3s ease;opacity:0;animation:fadeIn 1s ease 0.8s forwards;}
+/* Estilos do Contador (Otimizado para Mobile) */
+.contador-section{text-align:center;margin-bottom:3rem;opacity:0;animation:fadeIn 1s ease 0.7s forwards;}
+.contador-label{font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#6b3fa0;margin-bottom:12px;}
+.contador-container{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.contador-box{background:#0c0418;border:0.5px solid #2e1050;border-radius:10px;padding:10px;flex:1;min-width:68px;max-width:90px;}
+.contador-num{font-family:'Coiny',cursive;font-size:clamp(1.4rem, 5vw, 1.8rem);color:#c9b0e8;line-height:1.2;}
+.contador-txt{font-family:'Raleway',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#6b3fa0;margin-top:2px;}
+
+.btn-envelope{display:block;width:100%;padding:1rem 1.5rem;background:transparent;border:0.5px solid #2e1050;border-radius:12px;color:#9b6cc8;font-family:'Coiny',cursive;font-size:clamp(1.1rem, 4vw, 1.3rem);letter-spacing:2px;cursor:pointer;text-align:center;margin-bottom:2rem;transition:all 0.3s ease;opacity:0;animation:fadeIn 1s ease 0.9s forwards;}
 .btn-envelope:hover{background:#0f0520;border-color:#6b3fa0;color:#c9b0e8;}
 
-.carta{display:none;background:#0c0418;border:0.5px solid #2e1050;border-radius:16px;padding:2.5rem 2rem;margin-bottom:2.5rem;position:relative;overflow:hidden;}
-.carta::before{content:'"';position:absolute;top:-15px;left:15px;font-family:'Fuzzy Bubbles',cursive;font-size:140px;color:#150830;line-height:1;pointer-events:none;}
+.carta{display:none;background:#0c0418;border:0.5px solid #2e1050;border-radius:16px;padding:2rem 1.5rem;margin-bottom:2.5rem;position:relative;overflow:hidden;}
+.carta::before{content:'"';position:absolute;top:-25px;left:10px;font-family:'Fuzzy Bubbles',cursive;font-size:110px;color:#150830;line-height:1;pointer-events:none;}
 .carta.aberta{display:block;opacity:0;animation:fadeIn 1.2s ease forwards;}
 
-.carta p{font-family:'Fuzzy Bubbles',cursive;font-size:clamp(0.95rem,2.3vw,1.08rem);line-height:2.1;color:#cdbfe0;margin-bottom:1.5rem;position:relative;z-index:1;font-weight:400;}
+.carta p{font-family:'Fuzzy Bubbles',cursive;font-size:clamp(0.95rem, 4vw, 1.08rem);line-height:2;color:#cdbfe0;margin-bottom:1.5rem;position:relative;z-index:1;font-weight:400;}
 .carta p:last-of-type{margin-bottom:0;}
 .carta .destaque{color:#a07ad4;font-weight:700;}
 
 .assinatura{text-align:right;margin-top:2rem;padding-top:1.5rem;border-top:0.5px solid #1a0835;}
 .assinatura .com-amor{font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#6b3fa0;display:block;margin-bottom:6px;}
-.assinatura .nome-remetente{font-family:'Coiny',cursive;font-size:2.2rem;color:#c9b0e8;letter-spacing:2px;}
+.assinatura .nome-remetente{font-family:'Coiny',cursive;font-size:2rem;color:#c9b0e8;letter-spacing:2px;}
 
 .footer{text-align:center;opacity:0;animation:fadeIn 1s ease 1.6s forwards;}
 .footer .ico{font-size:1.5rem;margin-bottom:8px;display:block;}
-.footer p{font-family:'Raleway',sans-serif;font-size:12px;color:#3a1760;letter-spacing:2px;text-transform:uppercase;}
+.footer p{font-family:'Raleway',sans-serif;font-size:11px;color:#3a1760;letter-spacing:2px;text-transform:uppercase;}
+
+/* Ajustes finos para celulares muito pequenos */
+@media (max-width: 360px) {
+  .contador-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; justify-items: center; }
+  .contador-box { max-width: 100%; width: 100%; }
+}
 </style>
 
 <div id="particles"></div>
@@ -70,22 +84,44 @@ body{background:#08030f;color:#ddd0f0;font-family:'Raleway',sans-serif;min-heigh
     </div>
   </div>
 
+  <div class="contador-section">
+    <p class="contador-label">tempo ao seu lado</p>
+    <div class="contador-container">
+      <div class="contador-box">
+        <div class="contador-num" id="dias">00</div>
+        <div class="contador-txt">Dias</div>
+      </div>
+      <div class="contador-box">
+        <div class="contador-num" id="horas">00</div>
+        <div class="contador-txt">Horas</div>
+      </div>
+      <div class="contador-box">
+        <div class="contador-num" id="minutos">00</div>
+        <div class="contador-txt">Min</div>
+      </div>
+      <div class="contador-box">
+        <div class="contador-num" id="segundos">00</div>
+        <div class="contador-txt">Seg</div>
+      </div>
+    </div>
+  </div>
+
   <button class="btn-envelope" id="btnAbrir" onclick="abrirCarta()">
     ✦ toque para abrir sua carta ✦
   </button>
 
   <div class="carta" id="carta">
     <p>
-      <span class="destaque">Mares</span>, tem coisas que a gente não sabe explicar direito — como certas tardes se tornam inesquecíveis só porque você estava lá.
+      <span class="destaque">Mares</span>, tem coisas que a gente não sabe explicar direito, como certas tardes se tornam inesquecíveis só porque você estava lá.
     </p>
     <p>
-      Lembro de cada <span class="destaque">tarde do vinho</span>, do jeito que o tempo parava enquanto a gente conversava sobre tudo e sobre nada. Não era o vinho que tornava aquelas horas especiais — era você, do outro lado, com sua forma de me ouvir e de falar que sempre soou como lar.
+      Lembro de cada <span class="destaque">momento nosso</span>, do jeito que o tempo parava enquanto a gente jogava, brincava e conversava sobre tudo e sobre nada, estando perto ou longe um do outro. Não era só a conversa que tornava aquelas horas especiais, era você do outro lado da tela, com sua forma de me ouvir e de falar, sendo bom ou ruim kkkkkk, sua voz sempre soou como a coisa mais reconfortante do mundo.
     </p>
     <p>
-      Já faz um tempo que você é parte do que eu chamo de vida boa. E nesse dia dos namorados, quero que você saiba que cada detalhe seu importa pra mim — os sérios e os engraçados, os que você nem percebe que tem.
+      Já faz um tempo que você é parte do que eu chamo de vida boa, e nesse dia dos namorados, quero que você saiba que cada detalhe do que passamos juntos durante esses poucos meses importa pra mim, os sérios e os engraçados, os que a gente nem percebe que tem.
     </p>
     <p>
-      Feliz dia dos namorados, meu amor. Que a gente tenha ainda muitas e muitas <span class="destaque">tardes como aquelas</span> — e todas as outras que ainda não inventamos.
+      Feliz dia dos namorados, meu amor. Que a gente tenha ainda muitos e muitos <span class="destaque">momentos juntos</span> pra compartilhar e todos os outros que ainda não inventamos.
     </p>
     <div class="assinatura">
       <span class="com-amor">com amor,</span>
@@ -94,8 +130,8 @@ body{background:#08030f;color:#ddd0f0;font-family:'Raleway',sans-serif;min-heigh
   </div>
 
   <div class="footer">
-    <span class="ico">🍷</span>
-    <p>12 de junho · dia dos namorados</p>
+    <span class="ico">⭐</span>
+    <p>Te amo Muito meu bem🤍</p>
   </div>
 
 </div>
@@ -114,9 +150,32 @@ for(let i=0;i<35;i++){
   p.style.background=cols[Math.floor(Math.random()*cols.length)];
   container.appendChild(p);
 }
+
 function abrirCarta(){
   document.getElementById('btnAbrir').style.display='none';
   const c=document.getElementById('carta');
   c.classList.add('aberta');
 }
+
+// Lógica do Contador
+function atualizarContador() {
+  const dataInicio = new Date('2026-01-03T00:00:00'); 
+  const agora = new Date();
+  const diferenca = agora - dataInicio;
+
+  if (diferenca > 0) {
+    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+    document.getElementById('dias').innerText = dias.toString().padStart(2, '0');
+    document.getElementById('horas').innerText = horas.toString().padStart(2, '0');
+    document.getElementById('minutos').innerText = minutos.toString().padStart(2, '0');
+    document.getElementById('segundos').innerText = segundos.toString().padStart(2, '0');
+  }
+}
+
+atualizarContador();
+setInterval(atualizarContador, 1000);
 </script>
